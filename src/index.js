@@ -1,30 +1,22 @@
 import "./style.css"
 import { toCelcius } from "./farenheit-to-celsius";
 
+//TODO Move into a separate module
 async function fetchData(input){
     const search = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?key=E5FCPUDSUFM7VMLG3AMJWYX48`);
     const searchData = await search.json();
 
-    let currentDay = {
-        conditions: searchData.currentConditions.conditions,
-        humidity: searchData.currentConditions.humidity,
-        feelsLike: searchData.currentConditions.feelslike,
-        temp: searchData.currentConditions.temp,
-        precipProb: searchData.currentConditions.precipprob,
-        snow: searchData.currentConditions.snow,
-        windSpeed: searchData.currentConditions.windspeed
-    }
     return searchData;
 }
 
 
-
-
+//TODO Move into a separate module
 async function processSearch(data){
     let searchData = await fetchData(data);
-    
+
     //TODO Refactor into an object constructor
     let currentDay = {
+        location: searchData.resolvedAddress,
         date: searchData.days[0].datetime,
         conditions: searchData.days[0].conditions,
         feelsLike: searchData.days[0].feelslike,
@@ -39,6 +31,7 @@ async function processSearch(data){
     }
 
     let nextDay = {
+        location: searchData.resolvedAddress,
         date: searchData.days[1].datetime,
         conditions: searchData.days[1].conditions,
         feelsLike: searchData.days[1].feelslike,
@@ -54,7 +47,18 @@ async function processSearch(data){
 
     let obj = { currentDay, nextDay };
     
-    return obj;
+    console.log(obj);
 }
 
 processSearch('glasgow');
+
+const searchBox = document.querySelector('#search');
+const searchSubmit = document.querySelector('#submit');
+
+searchSubmit.addEventListener("click", () => {
+    if (searchBox.value === "" || searchBox.value === null) {
+        // do nothing
+    } else {
+        processSearch(searchBox.value);
+    }
+});
