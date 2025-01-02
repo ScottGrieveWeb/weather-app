@@ -17,6 +17,7 @@ async function processSearch(data){
     //TODO Refactor into an object constructor
     let currentDay = {
         location: searchData.resolvedAddress,
+        alerts: searchData.alerts,
         date: searchData.days[0].datetime,
         conditions: searchData.days[0].conditions,
         feelsLike: searchData.days[0].feelslike,
@@ -32,6 +33,7 @@ async function processSearch(data){
 
     let nextDay = {
         location: searchData.resolvedAddress,
+        alerts: searchData.alerts,
         date: searchData.days[1].datetime,
         conditions: searchData.days[1].conditions,
         feelsLike: searchData.days[1].feelslike,
