@@ -20,9 +20,10 @@ async function fetchData(input){
 
 
 
-async function processData(data){
+async function processSearch(data){
     let searchData = await fetchData(data);
     
+    //TODO Refactor into an object constructor
     let currentDay = {
         date: searchData.days[0].datetime,
         conditions: searchData.days[0].conditions,
@@ -37,7 +38,23 @@ async function processData(data){
         windspeed: searchData.days[0].windspeed
     }
 
-    console.log(currentDay);
+    let nextDay = {
+        date: searchData.days[1].datetime,
+        conditions: searchData.days[1].conditions,
+        feelsLike: searchData.days[1].feelslike,
+        precipProb: searchData.days[1].precipprob,
+        snow: searchData.days[1].snow,
+        sunrise: searchData.days[1].sunrise,
+        sunset: searchData.days[1].sunset,
+        temp: toCelcius(searchData.days[1].temp),
+        tempmin: toCelcius(searchData.days[1].tempmin),
+        tempmap: toCelcius(searchData.days[1].tempmax),
+        windspeed: searchData.days[1].windspeed
+    }
+
+    let obj = { currentDay, nextDay };
+    
+    return obj;
 }
 
-processData('glasgow');
+processSearch('glasgow');
