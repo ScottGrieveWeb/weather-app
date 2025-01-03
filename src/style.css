@@ -68,3 +68,15 @@ input {
     background-color: #C8C8C8;
     cursor: pointer;
 }
+
+/* Results Styling */
+#location-name {
+    font-size: 32px;
+    text-align: center;
+}
+
+#results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
