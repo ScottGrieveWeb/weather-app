@@ -1,0 +1,15 @@
+html,
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+body {
+    background-image: url('backgrounds/background.png');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* background-color: #88A201; */
+}
