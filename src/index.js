@@ -3,53 +3,63 @@ import { toCelcius } from "./farenheit-to-celsius";
 
 //TODO Move into a separate module
 async function fetchData(input){
-    const search = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?key=E5FCPUDSUFM7VMLG3AMJWYX48`);
-    const searchData = await search.json();
+    try {
+        const search = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?key=E5FCPUDSUFM7VMLG3AMJWYX48`);
+        const searchData = await search.json();
 
-    return searchData;
+        return searchData;
+    } catch {
+        return "error";
+    }
+    
 }
 
 
 //TODO Move into a separate module
 async function processSearch(data){
     let searchData = await fetchData(data);
-
-    //TODO Refactor into an object constructor
-    let currentDay = {
-        location: searchData.resolvedAddress,
-        alerts: searchData.alerts,
-        date: searchData.days[0].datetime,
-        conditions: searchData.days[0].conditions,
-        feelsLike: searchData.days[0].feelslike,
-        precipProb: searchData.days[0].precipprob,
-        snow: searchData.days[0].snow,
-        sunrise: searchData.days[0].sunrise,
-        sunset: searchData.days[0].sunset,
-        temp: toCelcius(searchData.days[0].temp),
-        tempmin: toCelcius(searchData.days[0].tempmin),
-        tempmap: toCelcius(searchData.days[0].tempmax),
-        windspeed: searchData.days[0].windspeed
-    }
-
-    let nextDay = {
-        location: searchData.resolvedAddress,
-        alerts: searchData.alerts,
-        date: searchData.days[1].datetime,
-        conditions: searchData.days[1].conditions,
-        feelsLike: searchData.days[1].feelslike,
-        precipProb: searchData.days[1].precipprob,
-        snow: searchData.days[1].snow,
-        sunrise: searchData.days[1].sunrise,
-        sunset: searchData.days[1].sunset,
-        temp: toCelcius(searchData.days[1].temp),
-        tempmin: toCelcius(searchData.days[1].tempmin),
-        tempmap: toCelcius(searchData.days[1].tempmax),
-        windspeed: searchData.days[1].windspeed
-    }
-
-    let obj = { currentDay, nextDay };
     
-    console.log(obj);
+    if (searchData === "error"){
+        console.log("We can't find that location, please try a different search");
+        searchBox.value = "";
+    } else {
+        //TODO Refactor into an object constructor
+        let currentDay = {
+            location: searchData.resolvedAddress,
+            alerts: searchData.alerts,
+            date: searchData.days[0].datetime,
+            conditions: searchData.days[0].conditions,
+            feelsLike: searchData.days[0].feelslike,
+            precipProb: searchData.days[0].precipprob,
+            snow: searchData.days[0].snow,
+            sunrise: searchData.days[0].sunrise,
+            sunset: searchData.days[0].sunset,
+            temp: toCelcius(searchData.days[0].temp),
+            tempmin: toCelcius(searchData.days[0].tempmin),
+            tempmap: toCelcius(searchData.days[0].tempmax),
+            windspeed: searchData.days[0].windspeed
+        }
+
+        let nextDay = {
+            location: searchData.resolvedAddress,
+            alerts: searchData.alerts,
+            date: searchData.days[1].datetime,
+            conditions: searchData.days[1].conditions,
+            feelsLike: searchData.days[1].feelslike,
+            precipProb: searchData.days[1].precipprob,
+            snow: searchData.days[1].snow,
+            sunrise: searchData.days[1].sunrise,
+            sunset: searchData.days[1].sunset,
+            temp: toCelcius(searchData.days[1].temp),
+            tempmin: toCelcius(searchData.days[1].tempmin),
+            tempmap: toCelcius(searchData.days[1].tempmax),
+            windspeed: searchData.days[1].windspeed
+        }
+
+        let obj = { currentDay, nextDay };
+    
+        console.log(obj);
+    }
 }
 
 processSearch('glasgow');
