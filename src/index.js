@@ -15,7 +15,7 @@ async function fetchData(input){
 
 
 //TODO Move into a separate module
-async function processSearch(data){
+async function processData(data){
     let searchData = await fetchData(data);
     
     if (searchData === "error"){
@@ -57,20 +57,22 @@ async function processSearch(data){
 
         let obj = { currentDay, nextDay };
     
-        console.log(obj);
+        return obj;
     }
 }
-
-processSearch('glasgow');
 
 const searchBox = document.querySelector('#search');
 const searchSubmit = document.querySelector('#submit');
 
-searchSubmit.addEventListener("click", () => {
+searchSubmit.addEventListener("click", processSearch, false);
+
+async function processSearch(){
     if (searchBox.value === "" || searchBox.value === null) {
+        console.log("err");
         // do nothing
     } else {
-        processSearch(searchBox.value);
-        // document.location.href = "result.html";
+        let resultObj = await processData(searchBox.value);
+        localStorage.setItem("result", JSON.stringify(resultObj));
+        document.location.href = "result.html";
     }
-});
+}
