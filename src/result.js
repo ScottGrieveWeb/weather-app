@@ -7,6 +7,11 @@ function displayResult(){
     localStorage.removeItem("result");
     console.log(userResults);
 
+    let resultLocation = document.createElement("h1");
+    let resultLocationText = document.createTextNode(userResults.currentDay.location);
+    resultLocation.appendChild(resultLocationText);
+
+    resultsDiv.appendChild(resultLocation);
 }
 
  window.onload = displayResult();
