@@ -71,5 +71,6 @@ searchSubmit.addEventListener("click", () => {
         // do nothing
     } else {
         processSearch(searchBox.value);
+        document.location.href = "result.html";
     }
 });
