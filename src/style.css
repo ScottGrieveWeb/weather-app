@@ -11,5 +11,5 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    /* background-color: #88A201; */
+    font-family: "Pixelify Sans", serif;
 }
