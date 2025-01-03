@@ -35,3 +35,28 @@ h1 {
         font-size: 60px;
     }
 }
+input {
+    border: none;
+}
+
+#search-form {
+    font-family: "Pixelify Sans", serif;
+}
+
+#search{
+    width: 60vw;
+    height: 50px;
+    background-color: #FFFF;
+    border: 2px solid;
+    border-color: #C8C8C8;
+    border-radius: 50px;
+    padding-left: 15px;
+    font-family: inherit;
+}
+#submit {
+    margin-left: -49px;
+    font-family: inherit;
+    border-radius: 100px;
+    height: 35px;
+    width: 35px;
+}
