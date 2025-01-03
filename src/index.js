@@ -1,10 +1,9 @@
 import "./style.css"
-import { toCelcius } from "./farenheit-to-celsius";
 
 //TODO Move into a separate module
 async function fetchData(input){
     try {
-        const search = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?key=E5FCPUDSUFM7VMLG3AMJWYX48`);
+        const search = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?unitGroup=uk&key=E5FCPUDSUFM7VMLG3AMJWYX48`);
         const searchData = await search.json();
 
         return searchData;
@@ -34,9 +33,9 @@ async function processSearch(data){
             snow: searchData.days[0].snow,
             sunrise: searchData.days[0].sunrise,
             sunset: searchData.days[0].sunset,
-            temp: toCelcius(searchData.days[0].temp),
-            tempmin: toCelcius(searchData.days[0].tempmin),
-            tempmap: toCelcius(searchData.days[0].tempmax),
+            temp: searchData.days[0].temp,
+            tempmin: searchData.days[0].tempmin,
+            tempmap: searchData.days[0].tempmax,
             windspeed: searchData.days[0].windspeed
         }
 
@@ -50,9 +49,9 @@ async function processSearch(data){
             snow: searchData.days[1].snow,
             sunrise: searchData.days[1].sunrise,
             sunset: searchData.days[1].sunset,
-            temp: toCelcius(searchData.days[1].temp),
-            tempmin: toCelcius(searchData.days[1].tempmin),
-            tempmap: toCelcius(searchData.days[1].tempmax),
+            temp: searchData.days[1].temp,
+            tempmin: searchData.days[1].tempmin,
+            tempmap: searchData.days[1].tempmax,
             windspeed: searchData.days[1].windspeed
         }
 
