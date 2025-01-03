@@ -73,6 +73,7 @@ async function processSearch(){
     } else {
         let resultObj = await processData(searchBox.value);
         localStorage.setItem("result", JSON.stringify(resultObj));
+        searchBox.value = "";
         document.location.href = "result.html";
     }
 }
