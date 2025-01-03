@@ -16,10 +16,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 body,
 h1 {
     font-size: 100px;
+    margin: 0;
 }
 
 @media only screen and (max-width: 635px){
@@ -41,6 +43,10 @@ input {
 
 #search-form {
     font-family: "Pixelify Sans", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 460px;
 }
 
 #search{
@@ -54,9 +60,11 @@ input {
     font-family: inherit;
 }
 #submit {
-    margin-left: -49px;
+    margin-left: -45px;
     font-family: inherit;
     border-radius: 100px;
-    height: 35px;
-    width: 35px;
+    height: 36px;
+    width: 36px;
+    background-color: #C8C8C8;
+    cursor: pointer;
 }
