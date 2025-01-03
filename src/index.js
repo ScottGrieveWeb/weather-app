@@ -19,8 +19,8 @@ async function processData(data){
     let searchData = await fetchData(data);
     
     if (searchData === "error"){
-        console.log("We can't find that location, please try a different search");
         searchBox.value = "";
+        return "error";
     } else {
         //TODO Refactor into an object constructor
         let currentDay = {
@@ -68,12 +68,16 @@ searchSubmit.addEventListener("click", processSearch, false);
 
 async function processSearch(){
     if (searchBox.value === "" || searchBox.value === null) {
-        console.log("err");
         // do nothing
     } else {
         let resultObj = await processData(searchBox.value);
-        localStorage.setItem("result", JSON.stringify(resultObj));
-        searchBox.value = "";
-        document.location.href = "result.html";
+        
+        if ( resultObj === "error"){
+            // TODO add visual q to inform user of invalid search
+        } else {
+            localStorage.setItem("result", JSON.stringify(resultObj));
+            searchBox.value = "";
+            document.location.href = "result.html";
+        }
     }
 }
