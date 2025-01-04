@@ -73,10 +73,12 @@ input {
 #result-body {
     display: flex;
     flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
 }
 
 #location-result {
-    font-size: 32px;
+    font-size: 52px;
     text-align: center;
 }
 
@@ -90,17 +92,41 @@ input {
 .card {
     background-color: #FFFF;
     width: 300px;
-    height: 300px;
-    padding: 40px 100px 100px 80px;
+    height: 400px;
+    padding: 40px 100px 60px 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .card,
 h3 {
-    font-size: 26px;
+    font-size: 32px;
+    margin: 0;
+    margin-bottom: -50px;
+}
+
+.card,
+img {
+    width: 80%;
+    margin-bottom: -40px;
 }
 
 .temperature {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: inherit;
+}
+
+.temp,
+.mintemp{
+    font-size: 46px;
+}
+
+.mintemp {
+    color: rgba(0, 0, 0, 0.5);
 }
