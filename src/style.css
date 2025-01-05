@@ -123,10 +123,10 @@ img {
 }
 
 .temp,
-.mintemp{
+.feelslike{
     font-size: 46px;
 }
 
-.mintemp {
+.feelslike {
     color: rgba(0, 0, 0, 0.5);
 }
