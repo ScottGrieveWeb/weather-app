@@ -3,4 +3,8 @@ export const domItems =  {
     resultLocation: document.querySelector('#location-result'),
     currentIcon: document.getElementById('current-icon'),
     nextIcon: document.querySelector('#next-icon'),
+    currentTemp: document.querySelector('#temp'),
+    currentFeelslike: document.querySelector('#feelslike'),
+    nextTemp: document.querySelector('#next-temp'),
+    nextFeelslike: document.querySelector('#next-feelslike'),
 }
