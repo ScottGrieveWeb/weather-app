@@ -8,5 +8,5 @@ export const domItems =  {
     nextTemp: document.querySelector('#next-temp'),
     nextFeelslike: document.querySelector('#next-feelslike'),
     currentCondition: document.querySelector('#condition'),
-    nextConditon: document.querySelector('#next-conditon')
+    nextConditon: document.querySelector('#next-condition')
 }

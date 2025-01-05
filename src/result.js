@@ -42,6 +42,10 @@ function displayResult(){
     domItems.currentFeelslike.innerHTML = `${userResults.currentDay.feelsLike}°`;
     domItems.nextTemp.innerHTML = `${userResults.nextDay.temp}°`;
     domItems.nextFeelslike.innerHTML = `${userResults.nextDay.feelsLike}°`;
+
+    //displays conditions for each day
+    domItems.currentCondition.innerHTML = userResults.currentDay.conditions;
+    domItems.nextConditon.innerHTML = userResults.nextDay.conditions;
 }
 
  window.onload = displayResult();
