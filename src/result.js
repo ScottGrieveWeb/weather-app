@@ -1,4 +1,5 @@
 import "./style.css";
+import { domItems } from "./dom";
 //TODO explore a better method for importing icon library
 import clearDay from "./icons/clear-day.svg";
 import clearNight from"./icons/clear-night.svg";
@@ -20,23 +21,19 @@ import thunderShowersDay from "./icons/thunder-showers-day.svg";
 import thunderShowersNight from "./icons/thunder-showers-night.svg";
 import wind from"./icons/wind.svg";
 
-const resultsDiv = document.querySelector('#results');
-const currentIcon = document.getElementById('current-icon');
-const nextIcon = document.querySelector('#next-icon');
+
 
 function displayResult(){
     let userResults = JSON.parse(localStorage.getItem("result"));
     localStorage.removeItem("result");
     console.log(userResults);
     
-    
-    let resultLocation = document.querySelector('#location-result');
-    resultLocation.innerHTML = userResults.currentDay.location;
+    domItems.resultLocation.innerHTML = userResults.currentDay.location;
     
     let currentIconSrc = iconChecker(userResults.currentDay.icon);
-    currentIcon.src = currentIconSrc;
+    domItems.currentIcon.src = currentIconSrc;
     let nextIconSrc = iconChecker(userResults.nextDay.icon);
-    nextIcon.src = nextIconSrc;
+    domItems.nextIcon.src = nextIconSrc;
 }
 
  window.onload = displayResult();
