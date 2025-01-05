@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto&display=swap" rel="stylesheet">
+    <title>SG Weather</title>
+<script defer src="result.bundle.js"></script></head>
+<body id="result-body">
+    <h1 id="location-result"></h1>
+    <div id="results">
+        <div class="card">
+            <h3>Today</h3>
+            <img src="b8b0bf1c3cdca0a96461.svg" id="current-icon">
+            <div class="temperature">
+                <h3 class="temp" id="temp"></h3>
+                <h3 class="feelslike" id="feelslike"></h3>
+            </div>
+            <p class="condition" id="condition"></p>
+        </div>
+        <div class="card">
+            <h3>Tomorrow</h3>
+            <img src="b8b0bf1c3cdca0a96461.svg" id="next-icon">
+            <div class="temperature">
+                <h3 class="temp" id="next-temp"></h3>
+                <h3 class="feelslike" id="next-feelslike"></h3>
+            </div>
+            <p class="condition" id="next-condition"></p>
+        </div>
+    </div>
+    <a href="javascript:history.back()"><p>go back</p></a>
+</body>
+</html>
