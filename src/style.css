@@ -115,6 +115,7 @@ h3 {
 img {
     width: 80%;
     margin-bottom: -40px;
+    max-width: 295px;
 }
 
 .temperature {
