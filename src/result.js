@@ -28,12 +28,20 @@ function displayResult(){
     localStorage.removeItem("result");
     console.log(userResults);
     
+    //displays the user's searched location
     domItems.resultLocation.innerHTML = userResults.currentDay.location;
     
+    // applies the respective weather icon for each day
     let currentIconSrc = iconChecker(userResults.currentDay.icon);
     domItems.currentIcon.src = currentIconSrc;
     let nextIconSrc = iconChecker(userResults.nextDay.icon);
     domItems.nextIcon.src = nextIconSrc;
+
+    //displays the temp and feelslike temp for each day
+    domItems.currentTemp.innerHTML = `${userResults.currentDay.temp}°`;
+    domItems.currentFeelslike.innerHTML = `${userResults.currentDay.feelsLike}°`;
+    domItems.nextTemp.innerHTML = `${userResults.nextDay.temp}°`;
+    domItems.nextFeelslike.innerHTML = `${userResults.nextDay.feelsLike}°`;
 }
 
  window.onload = displayResult();
@@ -50,7 +58,7 @@ function displayResult(){
             return cloudy;
             break;
         case 'partly-cloudy-rain-day':
-            return cloudyDayRain;
+            return cloudDayRain;
             break;
         case 'partly-cloudy-day':
             return cloudyDay;
