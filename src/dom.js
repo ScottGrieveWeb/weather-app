@@ -7,4 +7,6 @@ export const domItems =  {
     currentFeelslike: document.querySelector('#feelslike'),
     nextTemp: document.querySelector('#next-temp'),
     nextFeelslike: document.querySelector('#next-feelslike'),
+    currentCondition: document.querySelector('#condition'),
+    nextConditon: document.querySelector('#next-conditon')
 }
