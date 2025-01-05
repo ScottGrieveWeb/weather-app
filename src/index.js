@@ -3,7 +3,7 @@ import "./style.css"
 //TODO Move into a separate module
 async function fetchData(input){
     try {
-        const search = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?unitGroup=uk&key=E5FCPUDSUFM7VMLG3AMJWYX48`);
+        const search = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?unitGroup=uk&iconSet=icons2&key=E5FCPUDSUFM7VMLG3AMJWYX48`);
         const searchData = await search.json();
 
         return searchData;
