@@ -88,7 +88,8 @@ input {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin-top: 50px;
+    margin: 50px 0 0 0;
+    width: 100%;
 }
 
 #location-result {
@@ -147,3 +148,11 @@ img {
 .feelslike {
     color: rgba(0, 0, 0, 0.5);
 }
+
+/* @media only screen and (max-width: 1050px){
+    .card {
+        width: 250px;
+        height: 350px;
+        padding: 40px 100px 60px 100px;
+    }
+} */
