@@ -1,4 +1,5 @@
-import "./style.css"
+import "./style.css";
+import { indexDomItems } from "./dom";
 
 //TODO Move into a separate module
 async function fetchData(input){
@@ -72,9 +73,11 @@ async function processSearch(){
     if (searchBox.value === "" || searchBox.value === null) {
         // do nothing
     } else {
+        indexDomItems.loader.setAttribute("class", "loader");
         let resultObj = await processData(searchBox.value);
         
         if ( resultObj === "error"){
+            indexDomItems.loader.removeAttribute("class");
             // TODO add visual q to inform user of invalid search
         } else {
             localStorage.setItem("result", JSON.stringify(resultObj));

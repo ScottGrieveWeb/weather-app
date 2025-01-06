@@ -10,3 +10,7 @@ export const domItems =  {
     currentCondition: document.querySelector('#condition'),
     nextConditon: document.querySelector('#next-condition')
 }
+
+export const indexDomItems = {
+    loader: document.querySelector('#loader')
+}
