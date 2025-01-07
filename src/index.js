@@ -68,6 +68,12 @@ const searchBox = document.querySelector('#search');
 const searchSubmit = document.querySelector('#submit');
 
 searchSubmit.addEventListener("click", processSearch, false);
+searchBox.addEventListener("keydown", (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // prevent default behavior
+        processSearch(); // submit the form
+      }
+})
 
 async function processSearch(){
     if (searchBox.value === "" || searchBox.value === null) {
