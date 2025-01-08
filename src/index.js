@@ -6,7 +6,7 @@ async function fetchData(input){
     try {
         const search = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}?unitGroup=uk&iconSet=icons2&key=E5FCPUDSUFM7VMLG3AMJWYX48`);
         const searchData = await search.json();
-
+        console.log(searchData);
         return searchData;
     } catch {
         return "error";
@@ -41,24 +41,27 @@ async function processData(data){
             windspeed: searchData.days[0].windspeed
         }
 
-        let nextDay = {
-            location: searchData.resolvedAddress,
-            alerts: searchData.alerts,
-            date: searchData.days[1].datetime,
-            conditions: searchData.days[1].conditions,
-            icon: searchData.days[0].icon,
-            feelsLike: searchData.days[1].feelslike,
-            precipProb: searchData.days[1].precipprob,
-            snow: searchData.days[1].snow,
-            sunrise: searchData.days[1].sunrise,
-            sunset: searchData.days[1].sunset,
-            temp: searchData.days[1].temp,
-            tempmin: searchData.days[1].tempmin,
-            tempmap: searchData.days[1].tempmax,
-            windspeed: searchData.days[1].windspeed
+        let sevenDay = [];
+
+        for (let i = 1; i < 8; i++){
+            sevenDay[i] = {
+                date: searchData.days[i].datetime,
+                conditions: searchData.days[i].conditions,
+                icon: searchData.days[i].icon,
+                feelsLike: searchData.days[i].feelslike,
+                precipProb: searchData.days[i].precipprob,
+                snow: searchData.days[i].snow,
+                sunrise: searchData.days[i].sunrise,
+                sunset: searchData.days[i].sunset,
+                temp: searchData.days[i].temp,
+                tempmin: searchData.days[i].tempmin,
+                tempmap: searchData.days[i].tempmax,
+                windspeed: searchData.days[i].windspeed
+            }
         }
 
-        let obj = { currentDay, nextDay };
+        let obj = { currentDay, sevenDay };
+        console.log(obj);
     
         return obj;
     }
