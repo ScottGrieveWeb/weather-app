@@ -102,13 +102,15 @@ input {
     justify-content: center;
     align-items: center;
     gap: 50px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .card {
     background-color: #FFFF;
-    width: 300px;
-    height: 400px;
-    padding: 40px 100px 60px 100px;
+    width: 100px;
+    height: 104px;
+    padding: 40px 30px 60px 30px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -150,112 +152,19 @@ img {
 }
 
 @media only screen and (max-width: 1050px){
-    .card {
-        width: 200px;
-        height: 300px;
-        padding: 40px 100px 60px 100px;
-    }
-    #location-result {
-        font-size: 46px;
-    }
-    .card,
-    h3 {
-        font-size: 26px;
-    }
-    .temp,
-    .feelslike{
-        font-size: 42px;
-    }
+
 }
 
 @media only screen and (max-width: 860px){
-    .card {
-        width: 150px;
-        height: 250px;
-        padding: 40px 80px 50px 80px;
-    }
-    #location-result {
-        font-size: 42px;
-    }
-    .card,
-    h3 {
-        font-size: 22px;
-    }
-    .temp,
-    .feelslike{
-        font-size: 36px;
-    }
+
 }
 
 @media only screen and (max-width: 680px){
-    .card {
-        width: 120px;
-        height: 220px;
-        padding: 40px 50px 50px 50px;
-    }
-    #location-result {
-        font-size: 38px;
-    }
-    .card,
-    h3 {
-        font-size: 20px;
-    }
-    .temp,
-    .feelslike{
-        font-size: 30px;
-    }
-    #back {
-        font-size: 38px;
-    }
+
 }
 @media only screen and (max-width: 500px){
-    .card {
-        width: 120px;
-        height: 220px;
-        padding: 40px 40px 40px 40px;
-    }
-    #location-result {
-        font-size: 32px;
-    }
-    .card,
-    h3 {
-        font-size: 18px;
-    }
-    .temp,
-    .feelslike{
-        font-size: 25px;
-    }
-    #back {
-        font-size: 32px;
-    }
-    #result-body {
-        gap: 120px;
-    }
+
 }
 @media only screen and (max-width: 455px){
-    .card {
-        width: 120px;
-        height: 220px;
-        padding: 40px 35px 40px 35px;
-    }
-    #location-result {
-        font-size: 30px;
-    }
-    .card,
-    h3 {
-        font-size: 16px;
-    }
-    .temp,
-    .feelslike{
-        font-size: 22px;
-    }
-    #back {
-        font-size: 30px;
-    }
-    #result-body {
-        gap: 120px;
-    }
-    #results {
-        gap: 20px;
-    }
+
 }
