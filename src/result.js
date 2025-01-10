@@ -33,19 +33,14 @@ function displayResult(){
     
     // applies the respective weather icon for each day
     let currentIconSrc = iconChecker(userResults.currentDay.icon);
-    domItems.currentIcon.src = currentIconSrc;
-    let nextIconSrc = iconChecker(userResults.nextDay.icon);
-    domItems.nextIcon.src = nextIconSrc;
+    domItems.current.icon.src = currentIconSrc;
 
     //displays the temp and feelslike temp for each day
-    domItems.currentTemp.innerHTML = `${userResults.currentDay.temp}°`;
-    domItems.currentFeelslike.innerHTML = `${userResults.currentDay.feelsLike}°`;
-    domItems.nextTemp.innerHTML = `${userResults.nextDay.temp}°`;
-    domItems.nextFeelslike.innerHTML = `${userResults.nextDay.feelsLike}°`;
+    domItems.current.temp.innerHTML = `${userResults.currentDay.temp}°`;
+    domItems.current.feelsLike.innerHTML = `${userResults.currentDay.feelsLike}°`;
 
     //displays conditions for each day
-    domItems.currentCondition.innerHTML = userResults.currentDay.conditions;
-    domItems.nextConditon.innerHTML = userResults.nextDay.conditions;
+    domItems.current.condition.innerHTML = userResults.currentDay.conditions;
 }
 
  window.onload = displayResult();
