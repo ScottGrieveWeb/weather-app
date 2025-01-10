@@ -27,6 +27,7 @@ function displayResult(){
     let userResults = JSON.parse(localStorage.getItem("result"));
     localStorage.removeItem("result");
     console.log(userResults);
+
     
     //displays the user's searched location
     domItems.resultLocation.innerHTML = userResults.currentDay.location;
@@ -34,13 +35,24 @@ function displayResult(){
     // applies the respective weather icon for each day
     let currentIconSrc = iconChecker(userResults.currentDay.icon);
     domItems.current.icon.src = currentIconSrc;
+    for (let i = 1; i < 8; i++){
+        let iconSrc = iconChecker(userResults.sevenDay[i].icon);
+        domItems[i].icon.src = iconSrc;
+    }
 
     //displays the temp and feelslike temp for each day
     domItems.current.temp.innerHTML = `${userResults.currentDay.temp}°`;
     domItems.current.feelsLike.innerHTML = `${userResults.currentDay.feelsLike}°`;
+    for (let i = 1; i < 8; i++){
+        domItems[i].temp.innerHTML = `${userResults.sevenDay[i].temp}°`;
+        domItems[i].feelsLike.innerHTML = `${userResults.sevenDay[i].feelsLike}°`;
+    }
 
     //displays conditions for each day
     domItems.current.condition.innerHTML = userResults.currentDay.conditions;
+    for (let i = 1; i < 8; i++){
+        domItems[i].condition.innerHTML = userResults.sevenDay[i].conditions;
+    }
 }
 
  window.onload = displayResult();
