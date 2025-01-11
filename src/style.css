@@ -257,12 +257,54 @@ img {
     }
 }
 
-@media only screen and (max-width: 680px){
-
-}
-@media only screen and (max-width: 500px){
-
-}
-@media only screen and (max-width: 455px){
-
+@media only screen and (max-width: 1050px){
+    #result-body {
+        gap: 50px;
+    }
+    
+    #location-result {
+        font-size: 46px;
+        margin-top: 30px;
+    }
+    
+    #results {
+        gap: 20px;
+        width: 100%;
+        row-gap: 60px;
+        margin-bottom: -25px;
+    }
+    
+    .card {
+        flex-basis: 195px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 80px;
+        padding: 40px 5px 60px 5px;
+        gap: 40px;
+        padding-top: 80px;
+    }
+    
+    .card,
+    h3 {
+        font-size: 20px;
+        margin-bottom: -40px;
+    }
+    
+    .card,
+    img {
+        width: 40%;
+        margin-bottom: -40px;
+    }
+    
+    .temperature {
+        gap: 20px;
+    }
+    
+    .temp,
+    .feelslike{
+        font-size: 24px;
+    }
+    .temp {
+        margin-left: -10px;
+    }
 }
