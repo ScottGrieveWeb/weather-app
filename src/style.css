@@ -271,7 +271,7 @@ img {
         gap: 20px;
         width: 100%;
         row-gap: 60px;
-        margin-bottom: -25px;
+        margin-bottom: -10px;
     }
     
     .card {
@@ -303,6 +303,57 @@ img {
     .temp,
     .feelslike{
         font-size: 24px;
+    }
+    .temp {
+        margin-left: -10px;
+    }
+}
+
+@media only screen and (max-width: 890px){
+    #result-body {
+        gap: 45px;
+    }
+    
+    #location-result {
+        font-size: 40px;
+        margin-top: -30px;
+    }
+    
+    #results {
+        gap: 18px;
+        width: 100%;
+        row-gap: 65px;
+    }
+    
+    .card {
+        flex-basis: 160px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 80px;
+        padding: 40px 5px 60px 5px;
+        gap: 45px;
+        padding-top: 80px;
+    }
+    
+    .card,
+    h3 {
+        font-size: 18px;
+        margin-bottom: -40px;
+    }
+    
+    .card,
+    img {
+        width: 40%;
+        margin-bottom: -40px;
+    }
+    
+    .temperature {
+        gap: 20px;
+    }
+    
+    .temp,
+    .feelslike{
+        font-size: 22px;
     }
     .temp {
         margin-left: -10px;
