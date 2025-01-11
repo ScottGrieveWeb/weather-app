@@ -53,6 +53,11 @@ function displayResult(){
     for (let i = 1; i < 8; i++){
         domItems[i].condition.innerHTML = userResults.sevenDay[i].conditions;
     }
+
+    //displays dates
+    for (let i = 2; i < 8; i++){
+        domItems[i].day.innerHTML = userResults.sevenDay[i].date;
+    }
 }
 
  window.onload = displayResult();
