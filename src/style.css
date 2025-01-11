@@ -90,11 +90,13 @@ input {
     gap: 50px;
     margin: 0;
     width: 100%;
+    overflow:hidden;
 }
 
 #location-result {
     font-size: 52px;
     text-align: center;
+    margin-top: 140px;
 }
 
 #results {
@@ -104,33 +106,35 @@ input {
     gap: 50px;
     flex-wrap: wrap;
     width: 100%;
+    row-gap: 80px;
+    margin-bottom: -55px;
 }
 
 .card {
     background-color: #FFFF;
     width: 100px;
-    height: 104px;
+    height: 170px;
     padding: 40px 30px 60px 30px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     overflow:hidden;
     padding-top: 80px;
 }
 
 .card,
 h3 {
-    font-size: 32px;
+    font-size: 28px;
     margin: 0;
-    margin-bottom: -50px;
+    margin-bottom: -40px;
 }
 
 .card,
 img {
-    width: 80%;
+    width: 45%;
     margin-bottom: -40px;
     max-width: 295px;
 }
@@ -140,12 +144,14 @@ img {
     justify-content: space-between;
     align-items: center;
     width: inherit;
+    gap: 50px;
 }
 
 .temp,
 .feelslike{
-    font-size: 46px;
+    font-size: 32px;
 }
+
 
 .feelslike {
     color: rgba(0, 0, 0, 0.5);
