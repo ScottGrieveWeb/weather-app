@@ -359,3 +359,227 @@ img {
         margin-left: -10px;
     }
 }
+
+@media only screen and (max-width: 740px){
+    #result-body {
+        gap: 45px;
+    }
+    
+    #location-result {
+        font-size: 38px;
+        margin-top: -30px;
+    }
+    
+}
+
+@media only screen and (max-width: 635px){
+    #result-body {
+        gap: 45px;
+    }
+    
+    #location-result {
+        font-size: 36px;
+        margin-top: -30px;
+    }
+    
+    #results {
+        gap: 12px;
+        width: 100%;
+        row-gap: 65px;
+    }
+    
+    .card {
+        flex-basis: 122px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 80px;
+        padding: 40px 5px 60px 5px;
+        gap: 45px;
+        padding-top: 80px;
+    }
+    
+    .card,
+    h3 {
+        font-size: 15px;
+        margin-bottom: -40px;
+    }
+    
+    .card,
+    img {
+        width: 40%;
+        margin-bottom: -40px;
+    }
+    
+    .temperature {
+        gap: 20px;
+    }
+    
+    .temp,
+    .feelslike{
+        font-size: 20px;
+    }
+    .temp {
+        margin-left: -10px;
+    }
+}
+@media only screen and (max-width: 575px){
+    #result-body {
+        gap: 30px;
+        padding-top: 20px;
+    }
+    
+    #location-result {
+        font-size: 25px;
+        margin-top: 0px;
+    }
+    
+    #results {
+        gap: 30px;
+        width: 100%;
+        row-gap: 65px;
+    }
+    
+    .card {
+        flex-basis: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 30px;
+        padding: 40px 5px 60px 5px;
+        gap: 30px;
+        padding-top: 80px;
+    }
+    
+    .card,
+    h3 {
+        font-size: 15px;
+        margin-bottom: -40px;
+    }
+    
+    .card,
+    img {
+        width: 40%;
+        margin-bottom: -40px;
+    }
+    
+    .temperature {
+        gap: 20px;
+    }
+    
+    .temp,
+    .feelslike{
+        font-size: 20px;
+    }
+    .temp {
+        margin-left: -10px;
+    }
+
+    #back {
+        font-size: 32px;
+    }
+}
+@media only screen and (max-width: 460px){
+    #result-body {
+        gap: 30px;
+        padding-top: 20px;
+    }
+    
+    #location-result {
+        font-size: 21px;
+        margin-top: 0px;
+    }
+    
+    #results {
+        gap: 22px;
+        width: 100%;
+        row-gap: 65px;
+    }
+    
+    .card {
+        flex-basis: 165px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 28px;
+        padding: 40px 5px 60px 5px;
+        gap: 32px;
+        padding-top: 80px;
+    }
+    
+    .card,
+    h3 {
+        font-size: 15px;
+        margin-bottom: -40px;
+    }
+    
+    .card,
+    img {
+        width: 40%;
+        margin-bottom: -40px;
+    }
+    
+    .temperature {
+        gap: 20px;
+    }
+    
+    .temp,
+    .feelslike{
+        font-size: 20px;
+    }
+    .temp {
+        margin-left: -10px;
+    }
+
+    #back {
+        font-size: 32px;
+    }
+}
+@media only screen and (max-width: 375px){
+    #location-result {
+        font-size: 18px;
+        margin-top: 0px;
+    }
+    
+    #results {
+        gap: 15px;
+        width: 100%;
+        row-gap: 60px;
+    }
+    
+    .card {
+        flex-basis: 138px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 28px;
+        padding: 40px 5px 60px 5px;
+        gap: 32px;
+        padding-top: 80px;
+    }
+    
+    .card,
+    h3 {
+        font-size: 15px;
+        margin-bottom: -30px;
+    }
+    
+    .card,
+    img {
+        width: 40%;
+        margin-bottom: -40px;
+    }
+    
+    .temperature {
+        gap: 20px;
+    }
+    
+    .temp,
+    .feelslike{
+        font-size: 20px;
+    }
+    .temp {
+        margin-left: -10px;
+    }
+
+    #back {
+        margin-top: 15px;
+        font-size: 25px;
+    }
+}
