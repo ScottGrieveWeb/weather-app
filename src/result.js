@@ -25,7 +25,7 @@ import wind from"./icons/wind.svg";
 
 function displayResult(){
     if(localStorage.getItem("result") === null){
-        document.location.href = "/";
+        document.location.href = "/weather-app";
     }
     let userResults = JSON.parse(localStorage.getItem("result"));
     localStorage.removeItem("result");
