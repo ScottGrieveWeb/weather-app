@@ -89,6 +89,7 @@ async function processSearch(){
             indexDomItems.loader.removeAttribute("class");
             // TODO add visual q to inform user of invalid search
         } else {
+            indexDomItems.loader.removeAttribute("class");
             localStorage.setItem("result", JSON.stringify(resultObj));
             searchBox.value = "";
             document.location.href = "result.html";

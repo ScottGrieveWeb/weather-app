@@ -24,6 +24,9 @@ import wind from"./icons/wind.svg";
 
 
 function displayResult(){
+    if(localStorage.getItem("result") === null){
+        document.location.href = "/";
+    }
     let userResults = JSON.parse(localStorage.getItem("result"));
     localStorage.removeItem("result");
     console.log(userResults);
@@ -61,6 +64,7 @@ function displayResult(){
 }
 
  window.onload = displayResult();
+ 
 
  function iconChecker(input){
     switch (input){
