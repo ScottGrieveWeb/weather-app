@@ -1,5 +1,6 @@
 import "./style.css";
 import { domItems } from "./dom";
+import moment from "moment";
 //TODO explore a better method for importing icon library
 import clearDay from "./icons/clear-day.svg";
 import clearNight from"./icons/clear-night.svg";
@@ -59,7 +60,7 @@ function displayResult(){
 
     //displays dates
     for (let i = 2; i < 8; i++){
-        domItems[i].day.innerHTML = userResults.sevenDay[i].date;
+        domItems[i].day.innerHTML = moment(userResults.sevenDay[i].date).format('ddd, Do MMM');
     }
 }
 
