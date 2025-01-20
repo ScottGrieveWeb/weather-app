@@ -3,6 +3,7 @@ body {
     margin:0;
     padding:0;
     height:100%;
+    text-align: center;
 }
 body {
     background-image: url('backgrounds/background.png');
@@ -24,14 +25,14 @@ h1 {
     margin: 0;
 }
 
-@media only screen and (max-width: 635px){
+@media only screen and (max-width: 710px){
     body,
     h1 {
         font-size: 80px;
     }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 570px){
     body,
     h1 {
         font-size: 60px;
