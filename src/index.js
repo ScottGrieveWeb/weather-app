@@ -96,3 +96,19 @@ async function processSearch(){
         }
     }
 }
+
+// checks for a default search location
+
+function checkDefault(){
+
+    if (localStorage.getItem("default") === null){
+        // do nothing
+    } else {
+        localStorage.removeItem("result"); 
+        let defaultSearch = JSON.parse(localStorage.getItem("default"));
+        searchBox.value = defaultSearch;
+        processSearch();
+    }
+}
+
+window.onload = checkDefault();
