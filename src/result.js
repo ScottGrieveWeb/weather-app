@@ -29,7 +29,7 @@ function displayResult(){
         document.location.href = "/weather-app";
     }
     let userResults = JSON.parse(localStorage.getItem("result"));
-    localStorage.removeItem("result");
+    // localStorage.removeItem("result"); 
     console.log(userResults);
 
     
@@ -125,4 +125,11 @@ function displayResult(){
             break;
     }
  }
+
+ const defaultBtn = document.getElementById('default');
+
+ defaultBtn.addEventListener("click", () => {
+    let currentSearch = JSON.parse(localStorage.getItem("result"));
+    localStorage.setItem("default", JSON.stringify(currentSearch.currentDay.location));
+ });
 
