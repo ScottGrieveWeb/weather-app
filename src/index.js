@@ -97,16 +97,16 @@ async function processSearch(){
     }
 }
 
-// checks for a default search location
-
-function checkDefault(){
-
+// checks for a default search location and processes search if one is found
+const delay = ms => new Promise(res => setTimeout(res, ms));
+async function checkDefault(){
     if (localStorage.getItem("default") === null){
         // do nothing
     } else {
-        localStorage.removeItem("result"); 
+        await delay(300);
         let defaultSearch = JSON.parse(localStorage.getItem("default"));
         searchBox.value = defaultSearch;
+        await delay(400);
         processSearch();
     }
 }
