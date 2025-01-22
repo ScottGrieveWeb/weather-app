@@ -111,4 +111,12 @@ async function checkDefault(){
     }
 }
 
-window.onload = checkDefault();
+function checkBackToggle(){
+    if (localStorage.getItem("back") !== null){
+        // do nothing
+    } else {
+        checkDefault();
+    }
+}
+
+window.onload = checkBackToggle();

@@ -25,13 +25,15 @@ import wind from"./icons/wind.svg";
 
 
 function displayResult(){
+    // removes back button toggle on page load
+    localStorage.removeItem("back"); 
+
+    // if there's no result item, take user back to homepage
     if(localStorage.getItem("result") === null){
         document.location.href = "/weather-app";
-    }
-    let userResults = JSON.parse(localStorage.getItem("result"));
-    // localStorage.removeItem("result"); 
-    console.log(userResults);
+    } 
 
+    let userResults = JSON.parse(localStorage.getItem("result"));
     
     //displays the user's searched location
     domItems.resultLocation.innerHTML = userResults.currentDay.location;
@@ -62,6 +64,8 @@ function displayResult(){
     for (let i = 2; i < 8; i++){
         domItems[i].day.innerHTML = moment(userResults.sevenDay[i].date).format('ddd, Do MMM');
     }
+
+    localStorage.removeItem("result");
 }
 
  window.onload = displayResult();
@@ -126,10 +130,18 @@ function displayResult(){
     }
  }
 
+ //sets current search as default
  const defaultBtn = document.getElementById('default');
 
  defaultBtn.addEventListener("click", () => {
-    let currentSearch = JSON.parse(localStorage.getItem("result"));
-    localStorage.setItem("default", JSON.stringify(currentSearch.currentDay.location));
+    let currentSearch = document.getElementById("location-result");
+    localStorage.setItem("default", JSON.stringify(currentSearch.innerText));
  });
+
+ // lets homepage know that user is going back to input a new search
+ const backBtn = document.getElementById('back');
+
+ backBtn.addEventListener('click', ()=>{
+    localStorage.setItem('back', true);
+ })
 
