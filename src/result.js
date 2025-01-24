@@ -130,12 +130,16 @@ function displayResult(){
     }
  }
 
- //sets current search as default
+ //toggles current search as default
  const defaultBtn = document.getElementById('default');
 
  defaultBtn.addEventListener("click", () => {
     let currentSearch = document.getElementById("location-result");
-    localStorage.setItem("default", JSON.stringify(currentSearch.innerText));
+    if (JSON.parse(localStorage.getItem("default")) === currentSearch.innerText){
+        localStorage.removeItem("default");
+    } else {
+        localStorage.setItem("default", JSON.stringify(currentSearch.innerText));
+    }
  });
 
  // lets homepage know that user is going back to input a new search
