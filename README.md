@@ -8,5 +8,4 @@ The aim of this project is to gain experience using an external API to create a 
     - Windspeed
     - Min/max temps
     - Sunrise/Sunset times
-- Ability to save location and default to it on load 
 - Separate page to compare the weather in different locations
