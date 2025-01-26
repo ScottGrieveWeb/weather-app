@@ -88,6 +88,7 @@ async function processSearch(){
         if ( resultObj === "error"){
             indexDomItems.loader.removeAttribute("class");
             // TODO add visual q to inform user of invalid search
+            alert('thats nae a real place');
         } else {
             indexDomItems.loader.removeAttribute("class");
             localStorage.setItem("result", JSON.stringify(resultObj));
