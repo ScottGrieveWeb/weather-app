@@ -67,6 +67,7 @@ async function processData(data){
     }
 }
 
+const body = document.querySelector('#index-body')
 const searchBox = document.querySelector('#search');
 const searchSubmit = document.querySelector('#submit');
 
@@ -87,8 +88,8 @@ async function processSearch(){
         
         if ( resultObj === "error"){
             indexDomItems.loader.removeAttribute("class");
-            // TODO add visual q to inform user of invalid search
-            alert('thats nae a real place');
+
+            setErrorMessage();
         } else {
             indexDomItems.loader.removeAttribute("class");
             localStorage.setItem("result", JSON.stringify(resultObj));
@@ -96,6 +97,25 @@ async function processSearch(){
             document.location.href = "result.html";
         }
     }
+}
+
+async function setErrorMessage(){
+    searchBox.style.cssText = "border-color: #F00F4F";
+    let errorMsg = document.createElement('p');
+    let errorTxt = document.createTextNode(`We can't find that one, please try again`);
+    errorMsg.appendChild(errorTxt);
+    errorMsg.setAttribute("id", "error");
+    body.appendChild(errorMsg);
+
+    // waits for a few seconds then removes the error message
+    setTimeout(removeErrorMessage, 3500);
+}
+
+function removeErrorMessage(){
+    searchBox.style.cssText = "";
+
+    let errorMsg = document.getElementById("error");
+    errorMsg.remove();
 }
 
 // checks for a default search location and processes search if one is found

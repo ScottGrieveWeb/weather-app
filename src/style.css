@@ -50,6 +50,11 @@ input {
     max-width: 460px;
 }
 
+body > p {
+    color: #F00F4F;
+    font-size: 20px;
+}
+
 #search{
     width: 60vw;
     height: 50px;
